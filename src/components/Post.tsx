@@ -34,6 +34,13 @@ export function Post(props: PostProps) {
     setNewCommentText(event?.target.value);
   }
 
+  function deleteComment(commentToDelete: string) {
+    const commentsWithoutDeletedOne = comments.filter((comment) => {
+      return comment != commentToDelete;
+    });
+    setComments(commentsWithoutDeletedOne);
+  }
+
   const publishedAtFormattedTitle = format(
     props.publishedAt,
     "d' de 'LLLL' as ' H'h:'m'm'",
@@ -96,7 +103,13 @@ export function Post(props: PostProps) {
 
       <div className={styles.commentList}>
         {comments.map((comment) => {
-          return <Comment key={comment} content={comment} />;
+          return (
+            <Comment
+              key={comment}
+              content={comment}
+              onDeleteComment={deleteComment}
+            />
+          );
         })}
       </div>
     </article>
