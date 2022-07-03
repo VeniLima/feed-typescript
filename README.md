@@ -27,12 +27,12 @@ Para instalar o <feed>, siga estas etapas:
 
 Linux e macOS:
 ```
-<npm install>
+npm install
 ```
 
 Windows:
 ```
-<npm install>
+npm install
 ```
 
 ## ☕ Usando <feed>
@@ -40,7 +40,7 @@ Windows:
 Para usar <feed>, siga estas etapas:
 
 ```
-<npm run dev>
+npm run dev
 ```
 
 ## 📫 Contribuindo para <feed>
@@ -65,7 +65,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
       <a href="#">
         <img src="http://github.com/venilima.png" width="100px;" alt="Foto do Vinicius Lima no GitHub"/><br>
         <sub>
-          <b>ViniciusLima</b>
+          <b>Vinicius Lima</b>
         </sub>
       </a>
     </td>
