@@ -23,7 +23,7 @@ export function Post(props: PostProps) {
 
   const [newCommentText, setNewCommentText] = useState<string>("");
 
-  function handleCreateNewComment() {
+  function handleCreateNewComment(event: any) {
     event?.preventDefault();
 
     setComments([...comments, newCommentText]);
