@@ -5,7 +5,7 @@ import { Avatar } from "./Avatar";
 
 interface CommentProps {
   content: string;
-  onDeleteComment: Function;
+  onDeleteComment: (comment: string) => void;
 }
 
 export function Comment(props: CommentProps) {
