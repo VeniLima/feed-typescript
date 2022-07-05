@@ -31,7 +31,12 @@ export function Post(props: PostProps) {
   }
 
   function handleNewCommentChange(event: any) {
+    event.target.setCustomValidity("");
     setNewCommentText(event?.target.value);
+  }
+
+  function handleNewCommentInvalid(event: any) {
+    event.target.setCustomValidity("Esse campo é obrigatorio");
   }
 
   function deleteComment(commentToDelete: string) {
@@ -53,6 +58,8 @@ export function Post(props: PostProps) {
     locale: ptBR,
     addSuffix: true,
   });
+
+  const isNewCommentEmpty = newCommentText.length == 0;
 
   return (
     <article className={styles.post}>
@@ -94,10 +101,14 @@ export function Post(props: PostProps) {
           name="commentContent"
           value={newCommentText}
           placeholder="Deixe um comentário"
+          onInvalid={handleNewCommentInvalid}
           onChange={handleNewCommentChange}
+          required
         />
         <footer>
-          <button type="submit">Publicar</button>
+          <button type="submit" disabled={isNewCommentEmpty}>
+            Publicar
+          </button>
         </footer>
       </form>
 
