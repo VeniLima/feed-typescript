@@ -15,7 +15,7 @@ interface PostProps {
 
   publishedAt: Date;
   content: {
-    type: "paragraph" | "link";
+    type: string;
     content: string;
   }[];
 }
